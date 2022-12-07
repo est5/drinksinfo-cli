@@ -1,9 +1,11 @@
-﻿using System.Text.Json;
-using FetchLib;
+﻿using FetchLib;
 
 var coctail = new CoctailService();
 var categories = await coctail.GetCategories();
-foreach (var cat in categories)
+
+var s = await coctail.GetDrinksByCategory(new CoctailCategory("Other/Unknown"));
+foreach (var item in s)
 {
-    System.Console.WriteLine(cat.CategoryName);
+    System.Console.WriteLine(item.DrinkName);
 }
+
