@@ -4,7 +4,7 @@ namespace FetchLib;
 
 public class CoctailService
 {
-    static readonly HttpClient client = new HttpClient();
+    private static readonly HttpClient client = new HttpClient();
     public async Task<IList<CoctailCategory>> GetCategories()
     {
         try
